@@ -77,7 +77,7 @@ const ftl2js = require("fluent_conv/ftl2js");
 ftl2js(ftl, (err, res) => {
   // res is like js
 });
-// or
+// or without callback
 const res = ftl2js(ftl);
 // res is like js
 
@@ -86,7 +86,7 @@ const js2ftl = require("fluent_conv/js2ftl");
 js2ftl(js, (err, res) => {
   // res is like ftl
 });
-//or
+// or without callback
 const res = js2ftl(js);
 // res is like ftl
 ```
