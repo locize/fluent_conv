@@ -4,7 +4,7 @@
   "description": "fluent2js and js2fluent converter",
   "main": "index.js",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   },
   "dependencies": {
     "fluent-syntax": "0.8.1"
