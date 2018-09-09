@@ -1,0 +1,36 @@
+{
+  "name": "fluent_conv",
+  "version": "1.0.0",
+  "description": "fluent2js and js2fluent converter",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "fluent-syntax": "0.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && mocha test"
+  },
+  "keywords": [
+    "fluent",
+    "projectfluent",
+    "json",
+    "js",
+    "translation",
+    "converter"
+  ],
+  "author": "jamuhl",
+  "license": "MIT",
+  "homepage": "http://locize.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/locize/fluent.git"
+  }
+}

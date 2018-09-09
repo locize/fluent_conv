@@ -1,0 +1,15 @@
+{
+  "emails": "{ $unreadEmails ->\n  [one] You have one unread email.\n *[other] You have { $unreadEmails } unread emails.\n}",
+  "-brand-name": "{\n *[nominative] Firefox\n  [accusative] Firefoxa\n}",
+  "-another-term": "another term",
+  "app-title": "{ -brand-name }",
+  "restart-app": "Zrestartuj { -brand-name[accusative] }.",
+  "login": {
+    "comment": "Note: { $title } is a placeholder for the title of the web page\ncaptured in the screenshot. The default, for pages without titles, is\ncreating-page-title-default.",
+    "val": "Predefined value",
+    "placeholder": "example@email.com",
+    "aria-label": "Login input value",
+    "title": "Type your login email"
+  },
+  "logout": "Logout"
+}
