@@ -1,4 +1,4 @@
-[![travis](https://img.shields.io/travis/locize/fluent.svg)](https://travis-ci.org/locize/fluent) [![npm](https://img.shields.io/npm/v/fluent.svg)](https://npmjs.org/package/fluent)
+[![travis](https://img.shields.io/travis/locize/fluent_conv.svg)](https://travis-ci.org/locize/fluent_conv) [![npm](https://img.shields.io/npm/v/fluent_conv.svg)](https://npmjs.org/package/fluent_conv)
 
 ## Download
 
@@ -77,9 +77,16 @@ const ftl2js = require("fluent_conv/ftl2js");
 ftl2js(ftl, (err, res) => {
   // res is like js
 });
+// or
+const res = ftl2js(ftl);
+// res is like js
+
 
 const js2ftl = require("fluent_conv/js2ftl");
 js2ftl(js, (err, res) => {
   // res is like ftl
 });
+//or
+const res = js2ftl(js);
+// res is like ftl
 ```

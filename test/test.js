@@ -23,3 +23,19 @@ test('js2ftl', (fn) => (done) => {
     done();
   });
 });
+
+describe('without callback', () => {
+
+  test('ftl2js', (fn) => (done) => {
+    const res = fn(fixtures.example.ftl);
+    expect(res).to.eql(fixtures.example.js);
+    done();
+  });
+
+  test('js2ftl', (fn) => (done) => {
+    const res = fn(fixtures.example.js);
+    expect(res).to.eql(fixtures.example.ftl);
+    done();
+  });
+
+});

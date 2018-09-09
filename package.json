@@ -10,9 +10,9 @@
     "fluent-syntax": "0.8.1"
   },
   "devDependencies": {
-    "eslint": "^4.4.1",
+    "eslint": "^5.5.0",
     "expect.js": "^0.3.1",
-    "mocha": "^3.2.0"
+    "mocha": "^5.2.0"
   },
   "scripts": {
     "lint": "eslint .",
@@ -31,6 +31,6 @@
   "homepage": "http://locize.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/locize/fluent.git"
+    "url": "git+https://github.com/locize/fluent_conv.git"
   }
 }

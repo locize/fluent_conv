@@ -1,9 +1,9 @@
-// const parser = require('./ftlparser');
 const syntax = require('fluent-syntax');
 const serializer = require('./ftl2jsSerializer');
 
 function ftlToJs(str, cb) {
   if (typeof str !== 'string') {
+    if (!cb) throw new Error('The first parameter was not a string');
     return cb(new Error('The first parameter was not a string'));
   }
 
@@ -28,7 +28,7 @@ function ftlToJs(str, cb) {
     return mem;
   }, {});
 
-  cb(null, result);
+  if (cb) cb(null, result);
   return result;
 }
 
