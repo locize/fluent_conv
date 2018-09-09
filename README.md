@@ -3,7 +3,7 @@
 ## Download
 
 The source is available for download from
-[GitHub](https://github.com/locize/fluent/archive/master.zip).
+[GitHub](https://github.com/locize/fluent_conv/archive/master.zip).
 Alternatively, you can install using npm:
 
 ```sh
