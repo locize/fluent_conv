@@ -2,7 +2,6 @@ function addValue(k, value) {
   let ftl = '';
 
   ftl = ftl + k + ' =';
-  if (typeof value !== 'string') value = JSON.stringify(value);
   if (value && value.indexOf('\n') > -1) {
     ftl = ftl + '\n  ';
     ftl = ftl + value.split('\n').join('\n  ');
@@ -21,8 +20,6 @@ function addComment(comment) {
 
   return ftl;
 }
-
-
 
 function js2ftl(resources, cb) {
   let ftl = '';
