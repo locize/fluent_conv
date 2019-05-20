@@ -25,7 +25,6 @@ test('js2ftl', (fn) => (done) => {
 });
 
 describe('without callback', () => {
-
   test('ftl2js', (fn) => (done) => {
     const res = fn(fixtures.example.ftl);
     expect(res).to.eql(fixtures.example.js);
@@ -37,5 +36,4 @@ describe('without callback', () => {
     expect(res).to.eql(fixtures.example.ftl);
     done();
   });
-
 });

@@ -26,3 +26,7 @@ login = Predefined value
 
 logout = Logout
 
+today-is = Today is { DATETIME($date) }
+
+last-notice = Last checked: { DATETIME($lastChecked, day: "numeric", month: "long") }.
+

@@ -20,7 +20,11 @@ const serializer = {
       key: this[getTypeName(item.id)](item.id),
       value: this[getTypeName(item.value)](item.value),
       comment: item.comment && this[getTypeName(item.comment)](item.comment),
-      attributes: item.attributes && item.attributes.map((attr) => { return this.serialize(attr); })
+      attributes:
+        item.attributes &&
+        item.attributes.map((attr) => {
+          return this.serialize(attr);
+        })
     };
   },
 
@@ -36,7 +40,11 @@ const serializer = {
       key: this[getTypeName(item.id)](item.id),
       value: this[getTypeName(item.value)](item.value),
       comment: item.comment && this[getTypeName(item.comment)](item.comment),
-      attributes: item.attributes && item.attributes.map((attr) => { return this.serialize(attr); })
+      attributes:
+        item.attributes &&
+        item.attributes.map((attr) => {
+          return this.serialize(attr);
+        })
     };
   },
 
@@ -44,18 +52,58 @@ const serializer = {
     return item.name;
   },
 
+  getStringLiteral: function(item) {
+    return item.value;
+  },
+
   getPattern: function(item) {
     const items = item.elements.map((placeable) => {
       if (placeable.expression) {
-        if (!this[getTypeName(placeable.expression)]) return console.log('unknown1', getTypeName(placeable.expression), placeable.expression);
+        if (!this[getTypeName(placeable.expression)])
+          return console.log(
+            'unknown1',
+            getTypeName(placeable.expression),
+            placeable.expression
+          );
         return this[getTypeName(placeable.expression)](placeable.expression);
       } else {
-        if (!this[getTypeName(placeable)]) return console.log('unknown2', getTypeName(placeable), placeable);
+        if (!this[getTypeName(placeable)])
+          return console.log('unknown2', getTypeName(placeable), placeable);
         return this[getTypeName(placeable)](placeable);
       }
     });
 
     return items.join('');
+  },
+
+  getCallExpression: function(item) {
+    const fcName = item.callee.name;
+
+    const positionals = item.positional.map((positional) => {
+      return this[getTypeName(positional)](positional, true);
+    });
+
+    const nameds = item.named.map((named) => {
+      return this[getTypeName(named)](named);
+    });
+
+    return (
+      '{ ' +
+      fcName +
+      '($' +
+      positionals.join(' ') +
+      (nameds.length ? ', ' + nameds.join(', ') : '') +
+      ') }'
+    );
+  },
+
+  getNamedArgument: function(item) {
+    return (
+      this[getTypeName(item.name)](item.name) +
+      ': "' +
+      this[getTypeName(item.value)](item.value) +
+      '"'
+    );
   },
 
   getTextElement: function(item) {
@@ -99,7 +147,7 @@ const serializer = {
       return this[getTypeName(variant)](variant);
     });
 
-    return  '{\n' + variants.join('\n') + '\n}';
+    return '{\n' + variants.join('\n') + '\n}';
   },
 
   getVariant: function(item) {
