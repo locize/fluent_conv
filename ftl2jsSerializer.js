@@ -151,7 +151,7 @@ const serializer = {
   },
 
   getVariant: function(item) {
-    const name = item.key.name;
+    const name = item.key.name ? item.key.name : item.key.value;
     const isDefault = item.default;
     const pattern = this[getTypeName(item.value)](item.value);
 
