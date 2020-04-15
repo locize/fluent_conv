@@ -23,7 +23,7 @@ fluent.ftl2js(str, (err, res) => {})
 Or you can direclty `import` or `require()` its functions:
 
 ```js
-import ftl2js from 'fluent_conv/v'
+import ftl2js from 'fluent_conv/ftl2js'
 // or
 const ftl2js = require('fluent_conv/cjs/ftl2js')
 ```
