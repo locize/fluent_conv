@@ -1,4 +1,2 @@
-module.exports = {
-  ftl2js: require('./ftl2js'),
-  js2ftl: require('./js2ftl')
-};
+import backend from './lib/index.js'
+export default backend

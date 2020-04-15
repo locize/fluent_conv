@@ -10,16 +10,22 @@ Alternatively, you can install using npm:
 npm install --save fluent_conv
 ```
 
-You can then `require()` fluent_conv as normal:
+You can then `import` or `require()` fluent_conv as normal:
 
 ```js
-const fluent = require("fluent_conv");
+import fluent from 'fluent_conv'
+// or
+const fluent = require('fluent_conv')
+
+fluent.ftl2js(str, (err, res) => {})
 ```
 
-Or you can direclty `require()` its functions:
+Or you can direclty `import` or `require()` its functions:
 
 ```js
-const ftl2js = require("fluent_conv/ftl2js");
+import ftl2js from 'fluent_conv/v'
+// or
+const ftl2js = require('fluent_conv/cjs/ftl2js')
 ```
 
 ## Usage
@@ -53,7 +59,7 @@ login = Predefined value
   .title = Type your login email
 
 logout = Logout
-`;
+`
 
 const js = {
   emails:
@@ -71,22 +77,22 @@ const js = {
     title: "Type your login email"
   },
   logout: "Logout"
-};
+}
 
-const ftl2js = require("fluent_conv/ftl2js");
+import ftl2js from 'fluent_conv/ftl2js'
+const res = ftl2js(ftl)
+// res is like js
+// or with callback
 ftl2js(ftl, (err, res) => {
   // res is like js
-});
-// or without callback
-const res = ftl2js(ftl);
-// res is like js
+})
 
 
-const js2ftl = require("fluent_conv/js2ftl");
+import js2ftl from 'fluent_conv/js2ftl'
+const res = js2ftl(js)
+// res is like ftl
+// or with callback
 js2ftl(js, (err, res) => {
   // res is like ftl
-});
-// or without callback
-const res = js2ftl(js);
-// res is like ftl
+})
 ```

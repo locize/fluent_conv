@@ -1,0 +1,7 @@
+/build
+/node_modules
+/cjs
+/dist
+/fluent.js
+/fluent.min.js
+/example
