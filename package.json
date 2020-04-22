@@ -16,6 +16,15 @@
     "./js2ftl": {
       "require": "./cjs/js2ftl.js",
       "default": "./lib/js2ftl.js"
+    },
+    "./cjs": {
+      "default": "./cjs/index.js"
+    },
+    "./cjs/ftl2js": {
+      "default": "./cjs/ftl2js.js"
+    },
+    "./cjs/js2ftl": {
+      "default": "./cjs/js2ftl.js"
     }
   },
   "module": "./lib/index.js",
