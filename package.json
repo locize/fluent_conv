@@ -29,7 +29,7 @@
   },
   "module": "./lib/index.js",
   "dependencies": {
-    "fluent-syntax": "0.8.1"
+    "@fluent/syntax": "0.15.0"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
