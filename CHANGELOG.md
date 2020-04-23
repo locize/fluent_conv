@@ -1,3 +1,7 @@
+### 3.0.0
+
+- update fluent-syntax dep
+
 ### 2.0.2
 
 - fix export for node v14 cjs
