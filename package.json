@@ -1,6 +1,6 @@
 {
   "name": "fluent_conv",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "fluent2js and js2fluent converter",
   "type": "module",
   "main": "./cjs/index.js",
