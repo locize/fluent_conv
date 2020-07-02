@@ -1,3 +1,7 @@
+### 3.0.1
+
+- transpile also esm
+
 ### 3.0.0
 
 - update fluent-syntax dep
