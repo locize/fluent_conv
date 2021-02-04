@@ -17,7 +17,7 @@ import fluent from 'fluent_conv'
 // or
 const fluent = require('fluent_conv')
 
-fluent.ftl2js(str, (err, res) => {}, { ignoreComments: false })
+fluent.ftl2js(str, (err, res) => {}, { respectComments: true })
 ```
 
 Or you can direclty `import` or `require()` its functions:
@@ -32,9 +32,9 @@ const ftl2js = require('fluent_conv/cjs/ftl2js')
 
 ```js
 {
-    // Ignore all kind of comments.
+    // If set to `false` will ignore all kind of comments.
     // Useful for one-way conversion from ftl to js files.
-    ignoreComments: false,
+    respectComments: true,
 }
 ```
 

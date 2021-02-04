@@ -1,7 +1,7 @@
 ### 3.1.0
 
 - handle Group and Resource comments
-- add optional `ignoreComments` parameter to `ftl2js`
+- add optional `respectComments` parameter to `ftl2js`
 
 ### 3.0.1
 
