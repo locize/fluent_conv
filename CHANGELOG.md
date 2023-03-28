@@ -1,3 +1,7 @@
+### 3.2.0
+
+- support MessageReference
+
 ### 3.1.0
 
 - handle Group and Resource comments

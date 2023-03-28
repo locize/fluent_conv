@@ -16,6 +16,10 @@ app-title = { -brand-name }
 
 restart-app = Zrestartuj { -brand-name[accusative] }.
 
+menu-save = Save
+
+menu-help-save = Click { menu-save } to save the file.
+
 # Note: { $title } is a placeholder for the title of the web page
 # captured in the screenshot. The default, for pages without titles, is
 # creating-page-title-default.

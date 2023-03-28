@@ -4,6 +4,8 @@
   "-another-term": "another term",
   "app-title": "{ -brand-name }",
   "restart-app": "Zrestartuj { -brand-name[accusative] }.",
+  "menu-save": "Save",
+  "menu-help-save": "Click { menu-save } to save the file.",
   "login": {
     "comment": "Note: { $title } is a placeholder for the title of the web page\ncaptured in the screenshot. The default, for pages without titles, is\ncreating-page-title-default.",
     "val": "Predefined value",
