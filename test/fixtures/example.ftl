@@ -34,3 +34,10 @@ today-is = Today is { DATETIME($date) }
 
 last-notice = Last checked: { DATETIME($lastChecked, day: "numeric", month: "long") }.
 
+function-with-selector =
+  There are
+  { NUMBER($count) ->
+    [4] four lights
+   *[other] { $count } lights
+  }
+
