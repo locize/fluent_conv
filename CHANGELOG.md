@@ -1,3 +1,7 @@
+### 3.3.0
+
+- Support function calls as selectors #5
+
 ### 3.2.0
 
 - support MessageReference
