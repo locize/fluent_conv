@@ -15,5 +15,6 @@
   },
   "logout": "Logout",
   "today-is": "Today is { DATETIME($date) }",
-  "last-notice": "Last checked: { DATETIME($lastChecked, day: \"numeric\", month: \"long\") }."
+  "last-notice": "Last checked: { DATETIME($lastChecked, day: \"numeric\", month: \"long\") }.",
+  "function-with-selector": "There are\n{ NUMBER($count) ->\n  [4] four lights\n *[other] { $count } lights\n}"
 }
