@@ -1,3 +1,8 @@
+### 3.3.2
+
+- `ftl2js`: keep the arguments of a term reference, `{ -brand(case: "accusative") }` was turned into `{ -brand }`
+- `ftl2js`: a function call with a literal argument, like `{ NUMBER(42) }`, no longer throws
+
 ### 3.3.1
 
 - `ftl2js`: a message with attributes but no value no longer throws
