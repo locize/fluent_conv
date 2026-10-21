@@ -1,3 +1,10 @@
+### 3.3.1
+
+- `ftl2js`: a message with attributes but no value no longer throws
+- `js2ftl`: an object without `val` writes `key =` instead of `key = undefined`
+- `ftl2js`: keep the attribute of a message reference, `{ login-input.placeholder }` was turned into `{ login-input }`
+- `ftl2js`: keep number literals in named arguments unquoted, `minimumFractionDigits: 2` was turned into `minimumFractionDigits: "2"`
+
 ### 3.3.0
 
 - Support function calls as selectors #5
