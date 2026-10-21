@@ -1,4 +1,4 @@
-[![travis](https://img.shields.io/travis/locize/fluent_conv.svg)](https://travis-ci.org/locize/fluent_conv) [![npm](https://img.shields.io/npm/v/fluent_conv.svg)](https://npmjs.org/package/fluent_conv)
+[![npm](https://img.shields.io/npm/v/fluent_conv.svg)](https://npmjs.org/package/fluent_conv)
 
 ## Download
 
