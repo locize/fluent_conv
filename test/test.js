@@ -66,4 +66,16 @@ describe('fixes', () => {
     expect(ftl2js(ftl)).to.eql({ price: '{ NUMBER($amount, minimumFractionDigits: 2, style: "percent") }' })
     roundTrip(ftl)
   })
+
+  it('ftl2js keeps the arguments of a term reference', () => {
+    const ftl = '-brand = Firefox\n\nget = Get { -brand(case: "accusative") }\n\n'
+    expect(ftl2js(ftl)).to.eql({ '-brand': 'Firefox', get: 'Get { -brand(case: "accusative") }' })
+    roundTrip(ftl)
+  })
+
+  it('ftl2js keeps literal positional arguments of a function', () => {
+    const ftl = 'answer = { NUMBER(42) } and { NUMBER(-0.5, style: "percent") }\n\n'
+    expect(ftl2js(ftl)).to.eql({ answer: '{ NUMBER(42) } and { NUMBER(-0.5, style: "percent") }' })
+    roundTrip(ftl)
+  })
 })
