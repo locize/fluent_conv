@@ -1,3 +1,7 @@
+### 3.3.3
+
+- `ftl2js`: string literal placeables keep their source form (`{"{"}`, `{"\""}`, `{"   "}`), so escaped braces and quotes, Unicode escapes and leading spaces survive a round trip; they used to come out as bare text that Fluent reads differently ([#8](https://github.com/locize/fluent_conv/pull/8), by [@Pharex38](https://github.com/Pharex38))
+
 ### 3.3.2
 
 - `ftl2js`: keep the arguments of a term reference, `{ -brand(case: "accusative") }` was turned into `{ -brand }`
