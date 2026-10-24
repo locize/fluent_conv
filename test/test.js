@@ -42,6 +42,12 @@ describe('fixes', () => {
   const { ftl2js, js2ftl } = require('../')
   const roundTrip = (ftl) => expect(js2ftl(ftl2js(ftl))).to.eql(ftl)
 
+  it('js2ftl escapes continuation lines that start with [, * or .', () => {
+    const ftl = js2ftl({ list: 'Items:\n* first\n[draft]\n.hidden' })
+    expect(ftl).to.eql('list =\n  Items:\n  {"*"} first\n  {"["}draft]\n  {"."}hidden\n\n')
+    expect(ftl2js(ftl)).to.eql({ list: 'Items:\n{"*"} first\n{"["}draft]\n{"."}hidden' })
+  })
+
   it('ftl2js keeps string literal placeables, which escape braces and leading [ * .', () => {
     const ftl = 'braces = Use {"{"} and {"}"} for placeables\n\nlist =\n  Items:\n  {"*"} first\n  {"["}draft{"]"}\n\n'
     expect(ftl2js(ftl)).to.eql({
