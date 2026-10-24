@@ -42,6 +42,15 @@ describe('fixes', () => {
   const { ftl2js, js2ftl } = require('../')
   const roundTrip = (ftl) => expect(js2ftl(ftl2js(ftl))).to.eql(ftl)
 
+  it('ftl2js keeps string literal placeables, which escape braces and leading [ * .', () => {
+    const ftl = 'braces = Use {"{"} and {"}"} for placeables\n\nlist =\n  Items:\n  {"*"} first\n  {"["}draft{"]"}\n\n'
+    expect(ftl2js(ftl)).to.eql({
+      braces: 'Use {"{"} and {"}"} for placeables',
+      list: 'Items:\n{"*"} first\n{"["}draft{"]"}'
+    })
+    roundTrip(ftl)
+  })
+
   it('ftl2js keeps a message with attributes but no value', () => {
     const ftl = 'login-input =\n  .placeholder = email@example.com\n  .aria-label = Login input\n\n'
     expect(ftl2js(ftl)).to.eql({
