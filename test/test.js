@@ -48,6 +48,18 @@ describe('fixes', () => {
     expect(ftl2js(ftl)).to.eql({ list: 'Items:\n{"*"} first\n{"["}draft]\n{"."}hidden' })
   })
 
+  it('js2ftl escapes [, * and . after leading spaces too, not after a tab', () => {
+    const ftl = js2ftl({ list: 'List:\n  * indented\n   [note]\n\t* tab' })
+    expect(ftl).to.eql('list =\n  List:\n    {"*"} indented\n     {"["}note]\n  \t* tab\n\n')
+    expect(ftl2js(ftl)).to.eql({ list: 'List:\n  {"*"} indented\n   {"["}note]\n\t* tab' })
+  })
+
+  it('js2ftl leaves the variants of a selector as they are, also unindented', () => {
+    const ftl = js2ftl({ total: 'Total:\n{ $n ->\n[one] one\n*[other] many\n}\n* note' })
+    expect(ftl).to.eql('total =\n  Total:\n  { $n ->\n  [one] one\n  *[other] many\n  }\n  {"*"} note\n\n')
+    expect(ftl2js(ftl)).to.eql({ total: 'Total:\n{ $n ->\n  [one] one\n *[other] many\n}\n{"*"} note' })
+  })
+
   it('ftl2js keeps string literal placeables, which escape braces and leading [ * .', () => {
     const ftl = 'braces = Use {"{"} and {"}"} for placeables\n\nlist =\n  Items:\n  {"*"} first\n  {"["}draft{"]"}\n\n'
     expect(ftl2js(ftl)).to.eql({
