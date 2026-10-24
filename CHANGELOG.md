@@ -1,3 +1,7 @@
+### 3.3.4
+
+- `js2ftl`: a line of a multiline value that starts with `[`, `*` or `.` (also after spaces) is written as `{"*"}`…, so bullet lists and `[note]` lines no longer cut off the rest of the value; the variants of a selector (`[one]`, `*[other]` inside `{ … }`) stay as they are ([#9](https://github.com/locize/fluent_conv/pull/9), by [@Pharex38](https://github.com/Pharex38))
+
 ### 3.3.3
 
 - `ftl2js`: string literal placeables keep their source form (`{"{"}`, `{"\""}`, `{"   "}`), so escaped braces and quotes, Unicode escapes and leading spaces survive a round trip; they used to come out as bare text that Fluent reads differently ([#8](https://github.com/locize/fluent_conv/pull/8), by [@Pharex38](https://github.com/Pharex38))
